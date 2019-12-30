@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <title>Responsive Images</title>
+</head>
+
+<body>
+    <nav>
+        <a class="nav-item" href="/">Home</a>
+        <a class="nav-item" href="/responsive-design.html">Responsive Design</a>
+        <a class="nav-item" href="/responsive-images.html">Responsive Images</a>
+    </nav>
+    <h1>Using SRCSET atrribute</h1>
+    <article>
+        <img srcset="../assets/bg-1600_xl_large.jpg 1600w, ../assets/bg-1000_large.jpg 1000w, ../assets/bg-800_medium.jpg 800w, ../assets/bg-500_small.jpg 500w"
+            alt="background image">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, quam. Maiores error hic provident quaerat
+            illo deleniti voluptates deserunt, fugit aspernatur natus doloremque, fuga dolore voluptatum at repudiandae
+            dicta aperiam.
+        </p>
+    </article>
+    <h1>Using SIZES atrribute</h1>
+    <article>
+        <img id="bg-sizes" src="../assets/bg-500_small.jpg" sizes="50vw"
+            srcset="../assets/bg-1600_xl_large.jpg 1600w, ../assets/bg-1000_large.jpg 1000w, ../assets/bg-800_medium.jpg 800w, ../assets/bg-500_small.jpg 500w"
+            alt="background image">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, quam. Maiores error hic provident quaerat
+            illo deleniti voluptates deserunt, fugit aspernatur natus doloremque, fuga dolore voluptatum at repudiandae
+            dicta aperiam.
+        </p>
+    </article>
+    <h1>Using Media Queries</h1>
+    <article>
+        <img id="bg-sizes-2" src="../assets/bg-500_small.jpg" sizes="(max-width: 700px) 90vw, 50vw"
+            srcset="../assets/bg-1600_xl_large.jpg 1600w, ../assets/bg-1000_large.jpg 1000w, ../assets/bg-800_medium.jpg 800w, ../assets/bg-500_small.jpg 500w"
+            alt="background image">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, quam. Maiores error hic provident quaerat
+            illo deleniti voluptates deserunt, fugit aspernatur natus doloremque, fuga dolore voluptatum at repudiandae
+            dicta aperiam.
+        </p>
+    </article>
+    <h1>Using Picture and Source Elements</h1>
+    <figure>
+        <picture>
+            <source media="(min-width:750px)" srcset="../assets/bg-1600_xl_large.jpg 2x, ../assets/bg-1000_large.jpg">
+            <source media="(min-width:500px )" srcset="../assets/bg-800_medium.jpg">
+            <img src="../assets/bg-500_small.jpg" alt="background Image">
+        </picture>
+        <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore accusantium corporis molestiae
+            doloribus laborum explicabo quam? Voluptatibus provident, quos neque, in repudiandae voluptatem ut unde
+            accusamus eos perspiciatis dicta quibusdam!</figcaption>
+    </figure>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+.box-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.box {
+    background-color: #ED8936;
+    border-radius: 5px;
+    height: 15rem;
+    width: 15rem;
+    margin: 0.2rem;
+}
+
+@media only screen and (min-width: 640px) {
+    .box {
+        background-color: #63B3ED;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .box {
+        background-color: #F56565;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .box {
+        background-color: #48BB78;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .box {
+        background-color: #D6BCFA;
+    }
+}

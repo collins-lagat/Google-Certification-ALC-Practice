@@ -1,7 +1,11 @@
-const tailwindcss = require("tailwindcss")
+// eslint-disable-next-line import/no-extraneous-dependencies
+const tailwindcss = require('tailwindcss')
+// eslint-disable-next-line import/no-extraneous-dependencies
 const autoprefixer = require('autoprefixer')
+// eslint-disable-next-line import/no-extraneous-dependencies
 const postcssNested = require('postcss-nested')
-const purgecss = require("@fullhuman/postcss-purgecss")
+// eslint-disable-next-line import/no-extraneous-dependencies
+const purgecss = require('@fullhuman/postcss-purgecss')
 
 /**
  * the env exposed by postcss thought the ctx was always undefined. Therefore look at ctx.webpack.mode
@@ -12,22 +16,25 @@ const purgecss = require("@fullhuman/postcss-purgecss")
  */
 
 module.exports = ({ webpack }) => ({
-    plugins: [
-        tailwindcss,
-        webpack.mode === "production"? purgecss({
-            content: ["./src/*.html"],
-            extractors: [
-                {
-                    extractor: class TailwindExtractor {
-                        static extract(content) {
-                            return content.match(/[A-z0-9-:\/]+/g) || [];
-                        }
-                    },
-                    extensions: ["html"]
-                }
-            ]
-        }): "",
-        autoprefixer,
-        postcssNested
-    ]
+	plugins: [
+		tailwindcss,
+
+		webpack.mode === 'production'
+			? purgecss({
+					content: ['./src/*.html'],
+					extractors: [
+						{
+							extractor: class TailwindExtractor {
+								static extract(content) {
+									return content.match(/[A-z0-9-:\/]+/g) || []
+								}
+							},
+							extensions: ['html']
+						}
+					]
+			  })
+			: '',
+		autoprefixer,
+		postcssNested
+	]
 })
